@@ -1,0 +1,59 @@
+{
+  "name": "review-subscription-renewal-cost-auditor",
+  "description": "Run Subscription Renewal Cost Auditor",
+  "version": "0.1.0",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "payload": {
+        "type": "object",
+        "properties": {
+          "subscriptions": {
+            "type": "array",
+            "description": "subscriptions"
+          },
+          "renewal_date": {
+            "type": "string",
+            "description": "renewal date"
+          },
+          "business_owner": {
+            "type": "string",
+            "description": "business owner"
+          },
+          "cancellation_terms": {
+            "type": "string",
+            "description": "cancellation terms"
+          }
+        },
+        "required": [
+          "subscriptions",
+          "renewal_date",
+          "business_owner",
+          "cancellation_terms"
+        ]
+      }
+    },
+    "required": [
+      "payload"
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "score": {
+        "type": "object"
+      },
+      "findings": {
+        "type": "array"
+      }
+    }
+  },
+  "implementation": {
+    "type": "script",
+    "path": "review-subscription-renewal-cost-auditor.py",
+    "runtime": "python3"
+  }
+}

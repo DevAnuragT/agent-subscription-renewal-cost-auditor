@@ -1,0 +1,11 @@
+spec_version: "0.1.0"
+name: subscription-renewal-cost-auditor
+version: 0.1.0
+description: Review subscriptions for renewal date, accountable owner, and cancellation terms.
+skills:
+  - subscription-renewal-cost-auditor-skill
+tools:
+  - review-subscription-renewal-cost-auditor
+tags:
+  - finance
+  - evidence-driven
